@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style1.css">
+    <title>Cadastro</title>
+</head>
+<body background="fundoForm2.png">
+    <h5 class="Cadastro">Cadastro</h5>
+
+    <div class="box-form">
+        <div class="form">
+           
+            <div class="nome completo">
+                <label class="formulário" for="nome_completo">Nome Completo</label>
+                <input class="formulário" type="text" id="nome_completo" placeholder="Nome Completo" required />
+            </div>
+
+            
+            <label class="formulário" for="datanasc">Data de Nascimento</label>
+            <input class="formulário" id="datanasc" type="date" required />
+
+            
+            <div class="e-mail">
+                <label class="formulário" for="email">E-mail</label>
+                <input class="formulário" type="email" id="email" placeholder="Exem:email@gmail.com" required />
+            </div>
+
+          
+            <div class="telefone">
+                <label class="formulário" for="telefone">Telefone</label>
+                <input class="formulário" type="tel" id="telefone" placeholder="Telefone" required />
+            </div>
+
+           
+            <label class="formulário" for="artes_marciais">Arte Marcial</label>
+            <select class="formulário" id="artes_marciais" required>
+                <option value="">Selecione</option>
+                <option value="Capoeira">Capoeira</option>
+                <option value="Jiu-Jitsu">Jiu-Jitsu</option>
+                <option value="Karatê">Karatê</option>
+            </select>
+
+           
+            <div class="butao">
+                <button class="button" type="button" onclick="enviar()">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function enviar() {
+            
+            var nome_completo = document.getElementById('nome_completo').value;
+            var datanasc = document.getElementById('datanasc').value;
+            var email = document.getElementById('email').value;
+            var telefone = document.getElementById('telefone').value;
+            var artes_marciais = document.getElementById('artes_marciais').value;
+
+            if (nome_completo.trim() === "" || datanasc === "" || email.trim() === "" || telefone.trim() === "" || artes_marciais === "") {
+                window.alert("Por favor, preencha todos os campos!");
+            } else {
+                window.alert("Cadastrado com sucesso!");
+                window.location = "home.html";
+            }
+        }
+    </script>
+</body>
+</html>
